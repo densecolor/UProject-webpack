@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>NLP</title>
+</head>
+
+<body>
+
+    <header>
+        Evaluate a news article with NLP
+    </header>
+
+    <main>
+        <section>
+            <form class="" onsubmit="return handleSubmit(event)">
+                <textarea id="areatext" name="input" value="" rows="10" cols="100"
+                    oninput="return Client.checkForInput(event)"
+                    placeholder="Please enter your text no more than 280 characters"></textarea>
+                <input id="textbutton" type="submit" name="" value="submit" disabled="true"
+                    onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+            </form>
+            <section>
+                <section id="result">
+                    <h1>Form Results:</h1>
+                    <div id="polarity"></div>
+                    <div id="subjectivity"></div>
+                </section>
+    </main>
+
+    <footer>
+        <p>Create by Iris</p>
+    </footer>
+    <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+    </script>
+</body>
+
+</html>
